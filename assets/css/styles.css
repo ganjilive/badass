@@ -1067,6 +1067,8 @@ button {
     text-align: center;
     justify-items: center;
   }
+  .match-photo { display: flex; justify-content: center; }
+  .photo-portrait { max-width: 280px; }
   .match-columns {
     grid-template-columns: 1fr;
     text-align: left;
