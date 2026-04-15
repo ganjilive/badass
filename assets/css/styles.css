@@ -558,11 +558,11 @@ button {
   padding-left: 20px;
   position: relative;
   font-size: 0.95rem;
-  color: var(--text);
-  font-style: italic;
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 400;
+  color: var(--text-soft);
+  font-style: normal;
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.55;
 }
 .trait-list li::before {
   content: '·';
