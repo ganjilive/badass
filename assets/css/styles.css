@@ -571,6 +571,13 @@ button {
   color: var(--gold);
   font-style: normal;
 }
+.match-col .trait-list li {
+  padding-left: 28px;
+}
+.match-col .trait-list li::before {
+  content: '—';
+  left: 2px;
+}
 .signature {
   font-family: var(--font-display);
   font-style: italic;
