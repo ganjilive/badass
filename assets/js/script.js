@@ -157,7 +157,7 @@
       );
 
       window.location.href =
-        'mailto:annsofie@gavitander.me?subject=' + subject + '&body=' + body;
+        'mailto:hello@badasscc.se?subject=' + subject + '&body=' + body;
 
       // Show success message
       if (formSuccess) {
