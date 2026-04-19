@@ -147,31 +147,21 @@
 
       if (!name || !email || !message) return;
 
-      const subject = encodeURIComponent(
-        'Badass Consulting & Community — ' + name
-      );
-      const body = encodeURIComponent(
-        (currentLang === 'sv' ? 'Namn' : 'Name') + ': ' + name +
-        '\n' + (currentLang === 'sv' ? 'E-post' : 'Email') + ': ' + email +
-        '\n\n' + (currentLang === 'sv' ? 'Meddelande' : 'Message') + ':\n' + message
-      );
-
-      window.location.href =
-        'mailto:hello@badasscc.se?subject=' + subject + '&body=' + body;
-
-      // Show success message
-      if (formSuccess) {
-        formSuccess.hidden = false;
-        // Apply current language to success message
-        const successText = formSuccess.getAttribute('data-' + currentLang);
-        if (successText) formSuccess.textContent = successText;
-      }
-
-      // Reset form after short delay
-      setTimeout(() => {
-        form.reset();
-        if (formSuccess) formSuccess.hidden = true;
-      }, 4000);
+      fetch('https://formspree.io/f/xqewbvvb', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message }),
+      }).then(function (res) {
+        if (res.ok && formSuccess) {
+          formSuccess.hidden = false;
+          const successText = formSuccess.getAttribute('data-' + currentLang);
+          if (successText) formSuccess.textContent = successText;
+          setTimeout(function () {
+            form.reset();
+            formSuccess.hidden = true;
+          }, 4000);
+        }
+      });
     });
   }
 
