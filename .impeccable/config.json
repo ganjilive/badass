@@ -1,0 +1,68 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "montserrat",
+        "createdAt": "2026-10-20T11:52:51.905Z",
+        "reason": "User chose to keep Montserrat brand font (2026-10-20)"
+      },
+      {
+        "rule": "buried-raster",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-20T11:53:06.011Z",
+        "reason": "Intentional 3.5% film-grain overlay (.grain-overlay)"
+      },
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-20T11:53:06.026Z",
+        "reason": "Intentional clipping: .photo-frame/.hero-arch image masks and .btn-gold fill sweep"
+      },
+      {
+        "rule": "hero-eyebrow-chip",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-20T11:53:06.039Z",
+        "reason": "User chose to keep the hero eyebrow label (2026-10-20)"
+      },
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-20T11:53:06.052Z",
+        "reason": "Only remaining hit is the 33-char hero eyebrow, kept by user (2026-10-20)"
+      },
+      {
+        "rule": "em-dash-overuse",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-20T11:53:06.064Z",
+        "reason": "User chose to keep existing copy (2026-10-20)"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-20T11:53:06.076Z",
+        "reason": "False positive: testimonial-card, differentiators, mobile-link and sections all have padding via clamp()/vars the detector doesn't resolve"
+      }
+    ]
+  }
+}
