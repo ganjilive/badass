@@ -19,7 +19,7 @@
 
   --text:       #ddd8cc;
   --text-soft:  #a89e90;
-  --text-dim:   #6a6256;
+  --text-dim:   #8c8374;
   --white:      #f4f0e8;
 
   --border:     rgba(200, 169, 106, 0.18);
@@ -159,7 +159,7 @@ button {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   text-align: center;
-  transition: background var(--t-base), color var(--t-base), box-shadow var(--t-base);
+  transition: background var(--t-base), color var(--t-base);
   position: relative;
   overflow: hidden;
 }
@@ -185,7 +185,6 @@ button {
 .btn-gold:hover,
 .btn-gold:focus-visible {
   color: var(--bg-deep);
-  box-shadow: 0 0 32px rgba(201, 160, 96, 0.25);
   outline: none;
 }
 
@@ -279,10 +278,12 @@ button {
   position: absolute;
   bottom: -3px;
   left: 0;
-  width: 0;
+  width: 100%;
   height: 1px;
   background: var(--gold);
-  transition: width var(--t-base);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--t-base);
 }
 .nav-links a:hover,
 .nav-links a:focus-visible {
@@ -291,7 +292,7 @@ button {
 }
 .nav-links a:hover::after,
 .nav-links a:focus-visible::after {
-  width: 100%;
+  transform: scaleX(1);
 }
 .nav-controls {
   display: flex;
@@ -339,17 +340,19 @@ button {
 
 /* Mobile Menu */
 .mobile-menu {
-  display: flex;
-  flex-direction: column;
   background: rgba(6, 11, 6, 0.97);
   backdrop-filter: blur(20px);
   border-top: 1px solid var(--border);
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.4s var(--ease);
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s var(--ease);
 }
 .mobile-menu.open {
-  max-height: 400px;
+  grid-template-rows: 1fr;
+}
+.mobile-menu-inner {
+  min-height: 0;
+  overflow: hidden;
 }
 .mobile-link {
   display: block;
@@ -477,8 +480,7 @@ button {
   overflow: hidden;
   box-shadow:
     0 0 0 1px var(--border),
-    0 32px 80px rgba(0, 0, 0, 0.7),
-    0 0 60px rgba(201, 160, 96, 0.06);
+    0 32px 80px rgba(0, 0, 0, 0.7);
 }
 .hero-arch img {
   width: 100%;
@@ -624,7 +626,7 @@ button {
   background: var(--bg-card);
   position: relative;
   cursor: default;
-  transition: border-left-color var(--t-base), background var(--t-base), box-shadow var(--t-base);
+  transition: border-left-color var(--t-base), background var(--t-base);
 }
 .service-card + .service-card {
   border-top: none;
@@ -632,7 +634,6 @@ button {
 .service-card:hover {
   border-left-color: var(--gold);
   background: var(--bg-card-hv);
-  box-shadow: inset 3px 0 20px rgba(201, 160, 96, 0.04);
 }
 .service-card-head {
   display: flex;
@@ -798,13 +799,12 @@ button {
   color: var(--gold);
   background: var(--bg-deep);
   flex-shrink: 0;
-  transition: background var(--t-base), box-shadow var(--t-base);
+  transition: background var(--t-base);
   position: relative;
   z-index: 1;
 }
 .process-step:hover .step-circle {
   background: var(--gold-glow);
-  box-shadow: 0 0 24px rgba(201, 160, 96, 0.2);
 }
 .step-connector {
   position: absolute;
@@ -979,8 +979,7 @@ button {
 .footer-tagline {
   font-size: 0.82rem;
   font-weight: 300;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--text-dim);
 }
 .footer-links {
@@ -1070,7 +1069,7 @@ button {
 .testimonial-title {
   font-size: 0.76rem;
   color: var(--gold-dim);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   font-weight: 300;
 }
 
